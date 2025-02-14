@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */
+.header-bar {
+    background-color: #EEEEEE;
+    color: black;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    font-size: 25px;
+}
+
+/* Content */
+.content {
+    margin-top: 60px; /* header */
+    margin-bottom: 60px; /* footer */
+    min-height: calc(100vh - 120px);
+    padding: 20px;
+}
+
+/* Search bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    padding: 8px 15px;
+    max-width: 600px;
+    margin: 20px auto;
+  }
+
+  .search-bar:focus-within {
+    border-color: orange;
+  }
+
+  /* Icons */
+  .search-icon {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0.5;
+  }
+  .search-icon:hover, .clear-icon:hover {
+    opacity: 1;
+  }
+
+  .search-icon img, .clear-icon img {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Input Field */
+  #search-input {
+    flex: 1;
+    border: 100px black;
+    outline:none; /*remove the border when clicked*/
+    padding: 0 10px;
+    font-size: 20px;
+  }
+
+  /* Placeholder Text */
+  .search-input::placeholder {
+    color: #888;
+  }
+
+  .loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+  .result{
+    display: none;
+  }
+
+  .scrollable-card {
+    display: flex;
+    overflow-x: auto; /* Horizontal scroll */
+    max-height: 500px;
+    padding: 10px;
+}
+
+.card {
+    display: inline-block;
+    background-color: #205375;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    flex: 0 0 auto; /* Prevents cards from stretching and ensures they stay the same width */
+}
+
+.card:hover{
+    background-color: #112B3C;
+}
+
+.clicked{
+    background-color: #112B3C;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 100%;
+    border: 5px solid white;
+  }
+
+.card .name {
+    color: white;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.no-result-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #CBCBCB;
+    text-align: center;
+    padding: 20px;
+    margin: 30px auto;
+    max-width: 600px;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+.details{
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 800px;
+  border-radius: 20px;
+}
+.first-line{
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center ;
+}
+.nationality{
+    font-size: 15px;
+    align-items: center;
+    justify-content: center;
+    text-align: center ;
+}
+
+.alternative{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-size: 20px;
+}
+/* Footer */
+.footer-bar {
+    background-color: #102A3B;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    align-items: center;
+}
+
+.footer-bar a {
+    color: white;
+    text-decoration: none; /* Remove underline */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.footer-bar img {
+    height: 20px;
+}
+
+/* the top priority class so put in the last */
+.hidden {
+  display: none;
+}

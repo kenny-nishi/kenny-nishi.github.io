@@ -1,0 +1,5 @@
+1. fix the problem of update the tokens and expire days etc (okay done)
+2. fix the problem of display the card name (okay done)
+3. fix the problem of click to change color and redo it (okay done)
+4. review code again to remove some duplicate code
+5. upload to the google cloud for further test

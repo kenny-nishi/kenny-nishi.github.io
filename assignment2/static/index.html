@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+    <title>Artist Search</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <header class="header-bar">
+        Artist Search
+    </header>
+
+    <main class="content">
+        <div class="search-bar">
+            <button class="search-icon" type="button" id="search-button">
+                <img src="../static/images/images/search_icon.png" alt="Search">
+            </button>
+            <input type="text" id="search-input" placeholder="Please enter an artist name." required>
+            <button class="search-icon" type="button" id="clear-button">
+                <img src="../static/images/images/clear_icon.png" alt="Clear">
+            </button>
+        </div>
+
+        <div class="no-result-box hidden" id="no-result-box">
+            No results found.
+        </div>
+
+        <div class = 'hidden' id="result">
+            <div class = "scrollable-card" id="card-container">
+            </div>
+        </div>
+
+        <div class = "details hidden" id="details">
+            <div class = "first-line" id = "first-line"></div>
+            <div class = "nationality" id = "nationality"></div>
+            <div class = 'alternative' id = 'alternative'></div>
+            <p class = "biography" id = "biography"></p>
+        </div>
+
+        <div class = "loading hidden" id="loading">
+            <img src="../static/images/images/loading.gif" alt="Loading...">
+        </div>
+    </main>
+
+    <footer class="footer-bar">
+        <a href="https://www.artsy.net/">
+            Powered by
+            <img src="../static/images/images/artsy_logo.svg" alt="Artsy Logo">
+            Artsy.
+        </a>
+    </footer>
+
+    <!-- script import -->
+    <script type="module" src="../static/js/details.js"></script>
+    <script type="module" src="../static/js/Request.js"></script>
+    <script type="module" src="../static/js/cross_button.js"></script>
+</body>
+</html>
+
+

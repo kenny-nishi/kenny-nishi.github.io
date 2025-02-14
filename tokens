@@ -1,0 +1,8 @@
+tokens:
+{
+    "type": "xapp_token",
+    "token": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IiIsInN1YmplY3RfYXBwbGljYXRpb24iOiJlOTdjNWU4ZC02OWVkLTQyMjEtOWIxZi1lZGU0OGZhN2U1NzgiLCJleHAiOjE3Mzg3ODM2NTIsImlhdCI6MTczODE3ODg1MiwiYXVkIjoiZTk3YzVlOGQtNjllZC00MjIxLTliMWYtZWRlNDhmYTdlNTc4IiwiaXNzIjoiR3Jhdml0eSIsImp0aSI6IjY3OWE4MTI0ZmQ3ZmRiNjBhNDk5NzQxMyJ9.HnW5riMQyKT7DRZjWVbqw1spwVZX9J29-b5cwVe7jw4",
+    "expires_at": "2025-02-05T19:27:32+00:00",
+    "_links": {}
+}
+
