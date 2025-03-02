@@ -80,10 +80,10 @@ def home():
 #     def artsy_get_request(query):
 #         url = 'https://api.artsy.net/api/search'
 #         params = {'q': query, 'size': SIZE, 'type': TYPE}
-#         headers = {'X-XAPP-Token': TOKENS}  # Directly use TOKENS
+#         headers = {'X-XAPP-Token': TOKENS}
 
 #         response = requests.get(url, params=params, headers=headers)
-#         # response.raise_for_status()  # Raise HTTP errors
+#         # response.raise_for_status()
 #         return response.json()
 
 #     output = artsy_get_request(user_input) ["_embedded"]["results"]
@@ -98,8 +98,6 @@ def home():
 @app.route('/artist_search/<string:query>', methods=['GET'])
 def artist_search(query):
     TOKENS = get_token()
-    if not all([TOKENS, SIZE, TYPE]):
-        raise ValueError("TOKENS, SIZE, or TYPE not defined")
     def artsy_get_request(query):
         url = 'https://api.artsy.net/api/search'
         params = {'q': query, 'size': SIZE, 'type': TYPE}
@@ -163,8 +161,6 @@ def artist_search(query):
 @app.route('/artist_detail/<string:id>', methods=['GET'])
 def artist_detail(id):
     TOKENS = get_token()
-    if not all([TOKENS, SIZE, TYPE]):
-        raise ValueError("TOKENS, SIZE, or TYPE not defined")
 
     def artsy_get_request(id):
         url = f'https://api.artsy.net/api/artists/{id}'
@@ -207,8 +203,5 @@ def artist_detail(id):
     return jsonify({'status': 'success', 'output': ans})
 
 
-
-
 if __name__ == '__main__':
-    # app.run(debug=True)
     app.run(host="127.0.0.1", port=8080, debug=True)

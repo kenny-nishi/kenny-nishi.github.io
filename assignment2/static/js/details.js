@@ -1,10 +1,10 @@
 export function details(item){
-    const details_box = document.getElementById('details');
+    const details = document.getElementById('details');
     const first_line = document.getElementById('first-line');
     const nationality = document.getElementById('nationality');
     const alternative = document.getElementById('alternative');
     const biography = document.getElementById('biography');
-
+    details.classList.add('hidden');
     // fetch('/details', {
     //     method: 'POST',
     //     headers: {
@@ -41,7 +41,7 @@ export function details(item){
                 alternative.innerHTML = "";
                 biography.innerHTML = data.output.biography;
             }
-            details_box.classList.remove('hidden');
+            details.classList.remove('hidden');
         } else {
             alert('Error in fetching details');
         }
@@ -52,6 +52,6 @@ export function details(item){
     .finally(() => {
         loading.classList.add('hidden');
         // result.classList.remove('hidden');
-        details_box.classList.remove('hidden');
+        details.classList.remove('hidden');
     });
 }
