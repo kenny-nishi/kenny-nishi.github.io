@@ -1,0 +1,42 @@
+<div *ngIf="isLoading" class="spinner">Loading...</div>
+<div class="col-12 container mt-5" *ngIf="!isLoading && favorites.length === 0">
+  <div class="alert alert-danger" role="alert">
+    No Favorite artists.
+  </div>
+</div>
+<div *ngIf="favorites.length > 0" class="favorites-container">
+    <div class="container mt-5">
+      <div *ngIf="favorites.length > 0" class="row g-3">
+        <div *ngFor="let favorite of favorites.slice().reverse()" class="col-12 col-md-6 col-lg-4">
+          <!-- Card -->
+          <div class="card" (click)="navigateToDetails(favorite.id)" style="cursor: pointer;">
+            <!-- Blurred Background -->
+            <div
+              class="card-background"
+              [style.background-image]="'url(' + favorite.image + ')'"
+              style="background-size: cover; background-position: center; filter: blur(8px); position: absolute; inset: 0; z-index: 0;"
+            ></div>
+             <!-- make the background-image be dimmer -->
+            <div
+              style="position: absolute; inset: 0; z-index: 1; background-color: rgba(0, 0, 0, 0.5);">
+            </div>
+            <!-- Card Content -->
+            <div class="card-body" style="position: relative; z-index: 1; padding: 10px; color: white; text-shadow: 0px 0px 5px black; height: 200px">
+              <h2>{{ favorite.name }}</h2>
+              <p>{{ favorite.birthday }} - {{ favorite.deathday }}</p>
+              <p>{{ favorite.nationality }}</p>
+              <p>{{ relativeTimeMap[favorite.id] }}</p>
+              <button
+                class="remove-button"
+                (click)="removeFavorite(favorite.id); $event.stopPropagation();"
+                style="position: absolute; bottom: 10px; right: 10px;background-color:transparent; color: white; text-decoration: underline; border: none;padding: 5px 10px;"
+              >
+                Remove
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>

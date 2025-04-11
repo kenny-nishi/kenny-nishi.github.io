@@ -1,0 +1,23 @@
+.notification-stack {
+  position: fixed;
+  margin-top: 70px; /* Space for navbar (header)  height */
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Space between notifications */
+}
+
+.alert {
+  position: relative;
+  padding-right: 3rem; /* Increase padding on the right */
+  border-radius: 0.375rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+}
+

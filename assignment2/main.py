@@ -3,6 +3,7 @@ import time, requests
 import json ,os, pytz
 from datetime import datetime
 
+#add a line here to rebuild from the gcloud
 app = Flask(__name__)
 
 SIZE = 10

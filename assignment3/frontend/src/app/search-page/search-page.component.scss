@@ -1,0 +1,36 @@
+.card {
+  background-color: #112938;
+  color: white;
+}
+
+.card:hover {
+  background-color: #004D90;
+}
+
+.card.clicked {
+  background-color: #004D90;
+}
+
+// for artwork
+.artwork_card {
+  background-color: white;
+  color: black
+}
+.artwork_card:hover {
+  background-color: white;
+}
+
+.card-footer:hover{
+  background-color: #004078;
+  color:white;
+}
+.modal{
+  color:black
+}
+
+
+
+
+
+
+

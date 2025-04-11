@@ -1,0 +1,95 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <div class="navbar-brand">Artist Search</div>
+
+    <!-- Toggler -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarContent"
+      aria-controls="navbarContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu Items -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a
+            [routerLink]="['/search']"
+            class="btn"
+            [ngClass]="{'btn-primary': activeButton === 'search'}"
+          >Search</a>
+        </li>
+
+        <!-- for unauthenticated users -->
+        <ng-container *ngIf="!isAuthenticated; else authActions">
+          <li class="nav-item">
+            <a
+              [routerLink]="['/login']"
+              class="btn"
+              [ngClass]="{'btn-primary': activeButton === 'login'}"
+            >Log in</a>
+          </li>
+          <li class="nav-item">
+            <a
+              [routerLink]="['/register']"
+              class="btn"
+              [ngClass]="{'btn-primary': activeButton === 'register'}"
+            >Register</a>
+          </li>
+        </ng-container>
+
+        <!-- for authenticated users -->
+        <ng-template #authActions>
+          <li class="nav-item">
+            <a
+              [routerLink]="['/favourite']"
+              class="btn"
+              [ngClass]="{'btn-primary': activeButton === 'favourite'}"
+            >Favorites</a>
+          </li>
+          <div class="dropdown">
+            <button
+              class="btn d-flex align-items-center dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              <div class="profile-circle">
+                <img [src]="userProfile?.profileImageUrl" alt="User Profile" />
+              </div>
+              <span class="ms-2">{{ userProfile?.fullname }}</span>
+            </button>
+
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li>
+                <button class="dropdown-item text-danger" (click)="deleteAccount()">
+                  Delete account
+                </button>
+              </li>
+              <hr>
+              <li>
+                <button class="dropdown-item text-primary" (click)="logout()">
+                  Log out
+                </button>
+              </li>
+            </ul>
+          </div>
+
+
+
+
+        </ng-template>
+      </ul>
+    </div>
+  </div>
+
+
+</nav>
